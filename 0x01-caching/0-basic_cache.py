@@ -2,7 +2,7 @@
 """
 Basic dictionary
 """
-from base_caching import BaseCaching
+BaseCaching = __import__('base_caching').BaseCaching
 
 
 class BasicCache(BaseCaching):
@@ -16,7 +16,7 @@ class BasicCache(BaseCaching):
         If key or item is None, this method should not do anything.
         """
         if key is not None and item is not None:
-            self.cache_data[key] = item
+            self.cache_data.update({key: item})
 
     def get(self, key):
         """
